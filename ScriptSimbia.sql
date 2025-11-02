@@ -743,10 +743,11 @@ SELECT p.idpost
   JOIN productcategory pc ON pc.idproductcategory = p.idproductcategory
   JOIN industry        i  ON i.idindustry         = p.idindustry
   JOIN industrytype    it ON it.idindustrytype    = i.idindustrytype
- WHERE p.cActive = '1'
+ WHERE p.cActive  = '1'
    AND pc.cActive = '1'
    AND i.cActive  = '1'
-   AND it.cActive = '1';
+   AND it.cActive = '1'
+   AND p.cStatus  = '2';
 
 
 CREATE OR REPLACE FUNCTION FN_TableIdGenerator
